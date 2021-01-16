@@ -127,3 +127,38 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+PROBLEMS
+1.WAVE ARRAY
+
+class Solution:
+    def convertToWave(self, arr, N):
+        # code here
+        arr.sort()
+        for i in range(0,N-1,2):
+            arr[i],arr[i+1]=arr[i+1],arr[i]
+        return arr
+        
+2.STRANGE MATRIX
+class Solution:
+    # do not edit this function
+    # use it to get the value of A[i][j]
+    def get(self, i, j):
+      return a.get(i,j)
+      
+    def solve(self, R, C):
+        # code here
+        maxi=0
+        j=-1
+        for i in range(C):
+            if(self.get(0,i)==1):
+                j=i
+                break
+        if(j==-1):
+            j=C-1
+        for i in range(R):
+            while(j>=0 and self.get(i,j)==1):
+                j-=1
+                maxi=i
+        return maxi
